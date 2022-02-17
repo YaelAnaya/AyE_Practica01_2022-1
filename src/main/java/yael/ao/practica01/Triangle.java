@@ -12,28 +12,38 @@ import java.awt.Graphics2D;
  * @author yaela
  */
 public class Triangle extends Figure{
-    private int[] xPoints;
-    private int[] yPoints;
-    
+
     public Triangle(int xPosition, int yPosition, int size, Color color) {
         super(xPosition, yPosition, size, color);
-        xPoints = new int[3];
-        yPoints = new int[3];
     }
     
-//    public int[] getXPoints(){
-//        
-//    }
-//    
-//    public int[] getYPoints(){
-//        
-//    }
+      
+    
+    public int[] getXPoints(){
+        int[] xPoints = new int[3];
+        
+        xPoints[0] = xPosition;
+        xPoints[1] = xPosition + (size / 2);
+        xPoints[2] = xPosition - (size / 2);
+        
+        return xPoints;
+    }
+    
+    public int[] getYPoints(){
+        int[] yPoints = new int[3];
+        
+        yPoints[0] = yPosition;
+        yPoints[1] = (int)(yPosition + Math.sqrt(Math.pow(size, 2) - Math.pow(size/2, 2)));
+        yPoints[2] = yPoints[1];
+        
+        return yPoints;
+        
+    }
 
     @Override
     public void drawInCanvas(Graphics2D graphics) {
         graphics.setColor(color);
-        
-        
+        graphics.fillPolygon(getXPoints(), getYPoints(), 3); 
     }
     
     

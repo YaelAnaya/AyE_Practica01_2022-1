@@ -4,7 +4,13 @@
  */
 package yael.ao.practica01;
 
+import com.formdev.flatlaf.FlatDarkLaf;
+import com.formdev.flatlaf.FlatLaf;
+import com.formdev.flatlaf.FlatLightLaf;
 import com.formdev.flatlaf.intellijthemes.FlatDarkPurpleIJTheme;
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatArcDarkContrastIJTheme;
+import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatArcDarkIJTheme;
+import java.awt.Color;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UIManager;
@@ -32,17 +38,33 @@ public class MainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        whiteboard = new yael.ao.practica01.Whiteboard();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
+
+        javax.swing.GroupLayout whiteboardLayout = new javax.swing.GroupLayout(whiteboard);
+        whiteboard.setLayout(whiteboardLayout);
+        whiteboardLayout.setHorizontalGroup(
+            whiteboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 589, Short.MAX_VALUE)
+        );
+        whiteboardLayout.setVerticalGroup(
+            whiteboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 435, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 160, Short.MAX_VALUE)
+                .addComponent(whiteboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(whiteboard, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -53,7 +75,7 @@ public class MainFrame extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
        try {
-            UIManager.setLookAndFeel(new FlatDarkPurpleIJTheme());
+            UIManager.setLookAndFeel(new FlatArcDarkIJTheme());
             UIManager.put("Button.arc", 20);
             UIManager.put("TextComponent.arc", 15);
             UIManager.put("Component.focusWidth", 0);
@@ -68,5 +90,6 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private yael.ao.practica01.Whiteboard whiteboard;
     // End of variables declaration//GEN-END:variables
 }

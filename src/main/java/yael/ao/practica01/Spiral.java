@@ -26,6 +26,17 @@ public class Spiral extends Figure {
     
     @Override
     public void drawInCanvas(Graphics2D graphics) {
+        graphics.setColor(color);
+        int radius = INITIALRADIUS;
+        
+        for (int i = 0; i < size; i++){
+            graphics.drawArc(xPosition - INITIALRADIUS, yPosition - INITIALRADIUS,
+                    2 * INITIALRADIUS, 2 * INITIALRADIUS, 0, 180);
+            radius += INCREMENT;
+            graphics.drawArc(xPosition - INITIALRADIUS, yPosition - INITIALRADIUS,
+                    2 * INITIALRADIUS - INCREMENT, 2 * INITIALRADIUS, 180, 180);
+        }
+        
     }
-
+    
 }
